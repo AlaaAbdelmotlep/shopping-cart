@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Product extends Component {
   getClasses() {
@@ -11,7 +12,11 @@ class Product extends Component {
     return (
       <div className="row">
         <div className="col-2">
-          <span>{this.props.product.name}</span>
+          <span>
+            <Link to={`/product/ ${this.props.product.id}`}>
+              {this.props.product.name}
+            </Link>
+          </span>
         </div>
         <div className="col">
           <span className={this.getClasses()}>{this.props.product.count}</span>
