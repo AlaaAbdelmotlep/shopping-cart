@@ -5,6 +5,7 @@ import Home from "./home";
 import NavBar from "./navBar";
 import Meun from "./menu";
 import ShoppingCart from "./shoppingCart";
+import Login from "./login";
 import ProductDetails from "./productDetails";
 import NotFound from "./notFound";
 import About from "./about";
@@ -82,6 +83,7 @@ class App extends Component {
               path="/cart"
               render={(props) => (
                 <ShoppingCart
+                  // this line responsabile for when click on add to cart , item appare in shoppingcart
                   products={this.state.products.filter((p) => p.inCart)}
                   // for Menu update
                   onDelete={this.handelInCart}
@@ -111,6 +113,8 @@ class App extends Component {
                 <ProductDetails products={this.state.products} {...props} />
               )}
             />
+
+            <Route path="/login" component={Login} />
 
             <Route path="/notFound" component={NotFound} />
 
